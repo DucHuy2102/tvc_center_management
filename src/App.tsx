@@ -8,6 +8,7 @@ import { AppLayout } from "@/components/layout/AppLayout"
 import { Login } from "@/pages/Login"
 import { Dashboard } from "@/pages/Dashboard"
 import { Students } from "@/pages/Students"
+import { StudentDetail } from "@/pages/StudentDetail"
 import { Tuition } from "@/pages/Tuition"
 import { Schedule } from "@/pages/Schedule"
 import { Classes } from "@/pages/Classes"
@@ -47,6 +48,7 @@ export function App() {
               {/* Vận hành chung */}
               <Route index element={<Dashboard />} />
               <Route path="hoc-vien" element={<Students />} />
+              <Route path="hoc-vien/:id" element={<StudentDetail />} />
               <Route path="hoc-phi" element={<Tuition />} />
               <Route path="lich" element={<Schedule />} />
               <Route path="lop-hoc" element={<Classes />} />

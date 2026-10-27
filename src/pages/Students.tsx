@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
 import { supabase, isSupabaseConfigured } from "@/lib/supabase"
 import type { StudentListItem, ZaloStatus, EnrollmentStatus } from "@/types/database"
 import { formatCurrency, formatDate } from "@/lib/format"
@@ -231,6 +232,7 @@ const SAMPLE_STUDENTS: StudentListItem[] = [
 type QuickFilter = "tat_ca" | "cho_xep_lop" | "dang_hoc" | "con_no" | "thieu_ho_so" | "chua_lien_he"
 
 export const Students: React.FC = () => {
+  const navigate = useNavigate()
   const [students, setStudents] = useState<StudentListItem[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [quickFilter, setQuickFilter] = useState<QuickFilter>("tat_ca")
@@ -538,7 +540,7 @@ export const Students: React.FC = () => {
                   return (
                     <tr
                       key={st.id}
-                      onClick={() => setSelectedStudent(st)}
+                      onClick={() => navigate(`/hoc-vien/${st.id}`)}
                       className="hover:bg-[#E7EDFB]/40 transition-colors cursor-pointer group"
                     >
                       {/* 1. Mã */}
@@ -634,7 +636,7 @@ export const Students: React.FC = () => {
                               <button
                                 onClick={() => {
                                   setActiveMenuId(null)
-                                  setSelectedStudent(st)
+                                  navigate(`/hoc-vien/${st.id}`)
                                 }}
                                 className="w-full text-left px-3 py-1.5 text-xs text-[#131B2E] hover:bg-[#E7EDFB] flex items-center gap-2"
                               >
@@ -688,7 +690,7 @@ export const Students: React.FC = () => {
             return (
               <div
                 key={st.id}
-                onClick={() => setSelectedStudent(st)}
+                onClick={() => navigate(`/hoc-vien/${st.id}`)}
                 className="bg-white border border-[#DFE4EC] rounded-[10px] p-3.5 space-y-2 shadow-none cursor-pointer active:bg-[#E7EDFB]/30 transition-colors"
               >
                 {/* Dòng 1: Name + Enrollment Status Chip + Còn nợ */}
