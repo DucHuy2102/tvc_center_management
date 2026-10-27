@@ -387,7 +387,7 @@ export const Students: React.FC = () => {
         {/* Nút Thêm học viên - Desktop hiển thị trong header */}
         <div className="hidden sm:block">
           <Button
-            onClick={() => alert("Tính năng Đăng ký học viên mới sẽ triển khai ở Nhiệm vụ 2.")}
+            onClick={() => navigate("/hoc-vien/dang-ky")}
             className="h-10 px-4 gap-1.5"
           >
             <Plus className="w-4 h-4" />
@@ -503,7 +503,7 @@ export const Students: React.FC = () => {
             Chưa có học viên nào trong hệ thống.
           </p>
           <Button
-            onClick={() => alert("Tính năng Đăng ký học viên mới sẽ triển khai ở Nhiệm vụ 2.")}
+            onClick={() => navigate("/hoc-vien/dang-ky")}
             className="h-10 px-5 gap-1.5"
           >
             <Plus className="w-4 h-4" />
@@ -765,7 +765,7 @@ export const Students: React.FC = () => {
       ========================================================================= */}
       <div className="sm:hidden fixed bottom-20 right-4 z-30">
         <button
-          onClick={() => alert("Tính năng Đăng ký học viên mới sẽ triển khai ở Nhiệm vụ 2.")}
+          onClick={() => navigate("/hoc-vien/dang-ky")}
           className="h-11 px-5 rounded-full bg-[#1E40AF] text-white shadow-lg flex items-center gap-2 text-sm font-medium hover:bg-[#1E3A8A] active:scale-95 transition-all cursor-pointer"
         >
           <Plus className="w-4 h-4" />
