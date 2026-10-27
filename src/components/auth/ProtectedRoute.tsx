@@ -16,10 +16,14 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm text-muted-foreground">Đang kiểm tra thông tin...</p>
+      <div className="min-h-screen flex items-center justify-center bg-[#F4F6FA] p-4">
+        <div className="w-full max-w-sm bg-white border border-[#DFE4EC] rounded-[10px] p-6 space-y-4 animate-pulse">
+          <div className="h-5 bg-[#ECEFF5] rounded-[4px] w-1/3" />
+          <div className="space-y-2">
+            <div className="h-4 bg-[#ECEFF5] rounded-[4px] w-full" />
+            <div className="h-4 bg-[#ECEFF5] rounded-[4px] w-2/3" />
+          </div>
+          <div className="text-xs text-[#5A6478]">Đang kiểm tra thông tin...</div>
         </div>
       </div>
     )

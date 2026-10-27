@@ -158,6 +158,9 @@ const REFERRERS = [
   { id: "ref-3", name: "Cô Hương", phone: "0912 555 666", org: "Ngoại ngữ TVC" },
 ]
 
+const CURRENT_YEAR = new Date().getFullYear()
+const INITIAL_PAYMENT_DATE = formatDate(new Date())
+
 export const RegisterStudent: React.FC = () => {
   const navigate = useNavigate()
   const { isOwner } = useAuth()
@@ -227,7 +230,7 @@ export const RegisterStudent: React.FC = () => {
 
   // Số tiền đóng ngay (Mặc định điền sẵn bằng Thành tiền)
   const [paidNow, setPaidNow] = useState<number>(netAmount)
-  const [paymentDate] = useState<string>(formatDate(new Date()))
+  const [paymentDate] = useState<string>(INITIAL_PAYMENT_DATE)
   const [paymentMethod, setPaymentMethod] = useState<"Tiền mặt" | "Chuyển khoản" | "Khác">("Chuyển khoản")
   const [paymentNote, setPaymentNote] = useState("")
   const [balanceDueDate, setBalanceDueDate] = useState("")
@@ -254,8 +257,7 @@ export const RegisterStudent: React.FC = () => {
   const isUnder18 = useMemo(() => {
     if (!dob) return false
     const birthYear = new Date(dob).getFullYear()
-    const currentYear = new Date().getFullYear()
-    return currentYear - birthYear < 18
+    return CURRENT_YEAR - birthYear < 18
   }, [dob])
 
   // Kiểm tra trùng SĐT mẫu

@@ -12,6 +12,10 @@ function getVietnameseWeekday(date: Date): string {
   return days[date.getDay()]
 }
 
+// Ngày hôm nay
+const CURRENT_DATE = new Date()
+const TODAY_FORMATTED = `${getVietnameseWeekday(CURRENT_DATE)}, ${String(CURRENT_DATE.getDate()).padStart(2, "0")}/${String(CURRENT_DATE.getMonth() + 1).padStart(2, "0")}/${CURRENT_DATE.getFullYear()}`
+
 export const Dashboard: React.FC = () => {
   const { profile, user, isOwner } = useAuth()
   const navigate = useNavigate()
@@ -36,9 +40,7 @@ export const Dashboard: React.FC = () => {
     revenueThisMonth: 126500000,
   })
 
-  // Ngày hôm nay
-  const today = new Date()
-  const todayFormatted = `${getVietnameseWeekday(today)}, ${String(today.getDate()).padStart(2, "0")}/${String(today.getMonth() + 1).padStart(2, "0")}/${today.getFullYear()}`
+  const todayFormatted = TODAY_FORMATTED
   
   // Tên hiển thị người dùng (ưu tiên tên riêng, fallback "Linh")
   const displayName = profile?.full_name?.split(" ").slice(-1)[0] || user?.email?.split("@")[0] || "Linh"

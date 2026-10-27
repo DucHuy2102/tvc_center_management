@@ -1215,14 +1215,14 @@ export const TeachersCommissions: React.FC = () => {
               </h3>
             </div>
 
-            <div className="bg-[#F8F4EB] border border-[#E8DFC8] rounded-[6px] p-3 text-xs space-y-1.5">
+            <div className="bg-[#F8F4EB] border border-[#9A7B3F]/30 rounded-[6px] p-3 text-xs space-y-1.5">
               <div className="flex justify-between">
                 <span className="text-[#5A6478]">Số lượng hồ sơ chi trả:</span>
                 <span className="font-bold text-[#131B2E] tabular-nums">
                   {selectedCommissionIds.length} hồ sơ
                 </span>
               </div>
-              <div className="flex justify-between border-t border-[#E8DFC8] pt-1">
+              <div className="flex justify-between border-t border-[#9A7B3F]/30 pt-1">
                 <span className="text-[#5A6478]">Tổng số tiền chi (20.000 ₫ x {selectedCommissionIds.length}):</span>
                 <span className="font-bold text-base text-[#9A7B3F] tabular-nums">
                   {formatCurrency(selectedCommissionIds.length * 20000)}

@@ -770,7 +770,7 @@ export const Settings: React.FC = () => {
 
               {/* Tóm tắt phân quyền theo thiết kế */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div className="p-3 bg-[#E7EDFB]/40 border border-[#BFDBFE] rounded-[6px] space-y-1">
+                <div className="p-3 bg-[#E7EDFB]/40 border border-[#1E40AF]/20 rounded-[6px] space-y-1">
                   <div className="font-bold text-[#1E40AF] flex items-center gap-1">
                     <Shield className="w-3.5 h-3.5" />
                     <span>Quyền Chủ (Toàn quyền):</span>
@@ -886,7 +886,7 @@ export const Settings: React.FC = () => {
                 </div>
 
                 {/* Điều kiện đủ (Quy tắc cố định) */}
-                <div className="p-3 bg-[#E7EDFB]/50 border border-[#BFDBFE] rounded-[6px] space-y-1">
+                <div className="p-3 bg-[#E7EDFB]/50 border border-[#1E40AF]/20 rounded-[6px] space-y-1">
                   <div className="font-bold text-[#1E40AF] flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Điều kiện đủ chi trả:</span>
@@ -1136,7 +1136,7 @@ export const Settings: React.FC = () => {
               </div>
 
               {/* Dòng tính toán tổng học phí chuẩn câu văn */}
-              <div className="p-2.5 bg-[#E7EDFB]/50 border border-[#BFDBFE] rounded-[6px] text-xs font-semibold text-[#1E40AF]">
+              <div className="p-2.5 bg-[#E7EDFB]/50 border border-[#1E40AF]/20 rounded-[6px] text-xs font-semibold text-[#1E40AF]">
                 {computedCourseTotal}
               </div>
 

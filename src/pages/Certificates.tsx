@@ -950,7 +950,7 @@ export const Certificates: React.FC = () => {
               </div>
 
               {/* Công cụ hỗ trợ: "Điền số liên tiếp từ..." */}
-              <div className="bg-[#E7EDFB]/40 border border-[#BFDBFE] rounded-[6px] p-3 space-y-2">
+              <div className="bg-[#E7EDFB]/40 border border-[#1E40AF]/20 rounded-[6px] p-3 space-y-2">
                 <div className="text-xs font-semibold text-[#1E40AF] flex items-center gap-1">
                   <Check className="w-3.5 h-3.5" />
                   <span>Công cụ hỗ trợ điền nhanh:</span>
@@ -1007,7 +1007,7 @@ export const Certificates: React.FC = () => {
 
               {/* Danh sách cảnh báo nếu số quyết định bị lặp */}
               {panelWarnings.length > 0 && (
-                <div className="bg-[#FBF0DC] border border-[#F5C2BC] rounded-[6px] p-3 text-xs text-[#A86A0B] space-y-1">
+                <div className="bg-[#FBF0DC] border border-[#A86A0B]/30 rounded-[6px] p-3 text-xs text-[#A86A0B] space-y-1">
                   <div className="flex items-center gap-1.5 font-bold">
                     <AlertTriangle className="w-4 h-4 shrink-0" />
                     <span>Lưu ý số quyết định:</span>
@@ -1022,7 +1022,7 @@ export const Certificates: React.FC = () => {
 
               {/* Danh sách lỗi nếu số hiệu bằng bị trùng hoặc thiếu */}
               {panelErrors.length > 0 && (
-                <div className="bg-[#FBE8E5] border border-[#F5C2BC] rounded-[6px] p-3 text-xs text-[#B3382C] space-y-1">
+                <div className="bg-[#FBE8E5] border border-[#B3382C]/30 rounded-[6px] p-3 text-xs text-[#B3382C] space-y-1">
                   <div className="flex items-center gap-1.5 font-bold">
                     <AlertTriangle className="w-4 h-4 shrink-0 text-[#B3382C]" />
                     <span>Vui lòng kiểm tra lại:</span>
@@ -1175,7 +1175,7 @@ export const Certificates: React.FC = () => {
                 />
               </div>
 
-              <label className="flex items-start gap-2.5 p-3 rounded-[6px] bg-[#E7EDFB]/50 border border-[#BFDBFE] cursor-pointer">
+              <label className="flex items-start gap-2.5 p-3 rounded-[6px] bg-[#E7EDFB]/50 border border-[#1E40AF]/20 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={confirmedDirectReceive}

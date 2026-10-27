@@ -624,7 +624,7 @@ export const Schedule: React.FC = () => {
 
       {/* 2. Banner cảnh báo trùng lịch tuần (Slim banner) */}
       {conflictsList.length > 0 && (
-        <div className="bg-[#FBE8E5] border border-[#F5C2BC] rounded-[6px] px-3.5 py-2.5 flex items-center justify-between gap-3 text-xs text-[#B3382C]">
+        <div className="bg-[#FBE8E5] border border-[#B3382C]/30 rounded-[6px] px-3.5 py-2.5 flex items-center justify-between gap-3 text-xs text-[#B3382C]">
           <div className="flex items-center gap-2">
             <AlertTriangle className="w-4 h-4 text-[#B3382C] shrink-0" />
             <span>
@@ -785,7 +785,7 @@ export const Schedule: React.FC = () => {
         {/* Chú thích màu theo thiết kế (Legend) */}
         <div className="flex items-center gap-3 text-[11px] text-[#5A6478] shrink-0 flex-wrap">
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-[3px] bg-[#E7EDFB] border border-[#BFDBFE] inline-block" />
+            <span className="w-3 h-3 rounded-[3px] bg-[#E7EDFB] border border-[#1E40AF]/20 inline-block" />
             <span>Lớp bình thường</span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -935,7 +935,7 @@ export const Schedule: React.FC = () => {
                               left: `${leftPercent}%`,
                               width: `${widthPercent}%`,
                             }}
-                            className={`absolute p-2 rounded-[6px] border-2 border-dashed border-[#1E40AF] bg-white cursor-pointer transition-all hover:shadow-sm overflow-hidden z-10 ${
+                            className={`absolute p-2 rounded-[6px] border-2 border-dashed border-[#1E40AF] bg-white cursor-pointer transition-colors hover:border-solid hover:bg-[#E7EDFB]/30 overflow-hidden z-10 ${
                               isHighlighted ? "ring-4 ring-[#1E40AF] ring-offset-2 animate-pulse" : ""
                             }`}
                           >
@@ -978,8 +978,8 @@ export const Schedule: React.FC = () => {
                           }}
                           className={`absolute p-1.5 sm:p-2 rounded-[6px] cursor-pointer transition-all overflow-hidden z-10 flex flex-col justify-between ${
                             item.isConflict
-                              ? "bg-[#FBE8E5] text-[#B3382C] border-2 border-[#B3382C] hover:bg-[#F8D7D3]"
-                              : "bg-[#E7EDFB] text-[#1E40AF] border border-[#BFDBFE] hover:bg-[#DCE6F8]"
+                              ? "bg-[#FBE8E5] text-[#B3382C] border-2 border-[#B3382C] hover:bg-[#B3382C]/15"
+                              : "bg-[#E7EDFB] text-[#1E40AF] border border-[#1E40AF]/20 hover:bg-[#1E40AF]/10"
                           } ${
                             isHighlighted ? "ring-4 ring-[#B3382C] ring-offset-2 animate-pulse z-30" : ""
                           }`}
@@ -1164,7 +1164,7 @@ export const Schedule: React.FC = () => {
                     className={`rounded-[8px] p-3.5 transition-all cursor-pointer ${
                       item.isConflict
                         ? "bg-[#FBE8E5] text-[#B3382C] border-2 border-[#B3382C]"
-                        : "bg-[#E7EDFB] text-[#1E40AF] border border-[#BFDBFE]"
+                        : "bg-[#E7EDFB] text-[#1E40AF] border border-[#1E40AF]/20"
                     } ${isHighlighted ? "ring-4 ring-[#B3382C] ring-offset-1" : ""}`}
                   >
                     {/* Header: Giờ & Ca */}
@@ -1257,7 +1257,7 @@ export const Schedule: React.FC = () => {
 
             {/* Cảnh báo xung đột nếu có */}
             {activeItem.isConflict && (
-              <div className="bg-[#FBE8E5] border border-[#F5C2BC] rounded-[6px] p-3 text-xs text-[#B3382C] space-y-1">
+              <div className="bg-[#FBE8E5] border border-[#B3382C]/30 rounded-[6px] p-3 text-xs text-[#B3382C] space-y-1">
                 <div className="flex items-center gap-1.5 font-bold">
                   <AlertTriangle className="w-4 h-4 shrink-0 text-[#B3382C]" />
                   <span>Cảnh báo xung đột lịch:</span>

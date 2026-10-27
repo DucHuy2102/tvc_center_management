@@ -68,6 +68,20 @@ const MOCK_CSV_PREVIEW = [
   { stt: 5, lastName: "Hoàng Minh", firstName: "Đức", phone: "0945 999 111", gender: "Nam", course: "Pre-Ielts", isDuplicate: false },
 ]
 
+// Hàm hỗ trợ tải CSV UTF-8 BOM
+const downloadCSV = (rows: (string | number)[][], prefix: string) => {
+  const timestamp = Math.floor(Date.now() / 1000)
+  const filename = `${prefix}_${timestamp}.csv`
+  const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + rows.map((e) => e.join(",")).join("\n")
+  const encodedUri = encodeURI(csvContent)
+  const link = document.createElement("a")
+  link.setAttribute("href", encodedUri)
+  link.setAttribute("download", filename)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 export const Reports: React.FC = () => {
   // Khoảng thời gian báo cáo: Tháng này | Tháng trước | Tùy chọn
   const [dateRangeMode, setDateRangeMode] = useState<"thang_nay" | "thang_truoc" | "tuy_chon">("thang_nay")
@@ -127,7 +141,7 @@ export const Reports: React.FC = () => {
       [4, "HV26-0004", "Trần Minh", "Khoa", "0934 567 890", "Ứng dụng CNTT Cơ bản", "UDCNTTCB_K0126_Ca1PM1", "Đang học", "500.000 ₫"],
       [5, "HV26-0005", "Đỗ Phương", "Linh", "0977 654 321", "Tiếng Anh giao tiếp", "TAGT_K0126_Ca1PM1", "Đang học", "800.000 ₫"],
     ]
-    downloadCSV(rows, `Danh_sach_hoc_vien_${Date.now()}.csv`)
+    downloadCSV(rows, "Danh_sach_hoc_vien")
     showToast("Đã xuất danh sách học viên (Excel)")
   }
 
@@ -139,7 +153,7 @@ export const Reports: React.FC = () => {
       ["PT26-0056", "15/10/2026", "Phạm Gia Bảo", "HV26-0002", "UDCNTTCB_K0126_Ca1PM1", "600.000 ₫", "Tiền mặt", "Linh", "Đóng đợt 1"],
       ["PT26-0042", "05/10/2026", "Trần Minh Khoa", "HV26-0004", "UDCNTTCB_K0126_Ca1PM1", "500.000 ₫", "Tiền mặt", "Linh", "Đóng đợt 1"],
     ]
-    downloadCSV(rows, `Hoc_phi_va_phieu_thu_${Date.now()}.csv`)
+    downloadCSV(rows, "Hoc_phi_va_phieu_thu")
     showToast("Đã xuất học phí và phiếu thu (Excel)")
   }
 
@@ -167,17 +181,7 @@ export const Reports: React.FC = () => {
     showToast("Đã xuất toàn bộ dữ liệu để sao lưu (zip)")
   }
 
-  // Hàm hỗ trợ tải CSV UTF-8 BOM
-  const downloadCSV = (rows: (string | number)[][], filename: string) => {
-    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + rows.map((e) => e.join(",")).join("\n")
-    const encodedUri = encodeURI(csvContent)
-    const link = document.createElement("a")
-    link.setAttribute("href", encodedUri)
-    link.setAttribute("download", filename)
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+
 
   // Tìm giá trị lớn nhất trong 6 tháng để tính chiều cao cột biểu đồ
   const maxRevenue = useMemo(() => {
@@ -764,7 +768,7 @@ export const Reports: React.FC = () => {
 
             {/* Bước 4: Phát hiện trùng số điện thoại & Lựa chọn xử lý:
                 "show '12 dòng bị trùng số điện thoại' with a choice to skip or update." */}
-            <div className="bg-[#FBE8E5] border border-[#F5C2BC] rounded-[6px] p-3 text-xs text-[#B3382C] space-y-2">
+            <div className="bg-[#FBE8E5] border border-[#B3382C]/30 rounded-[6px] p-3 text-xs text-[#B3382C] space-y-2">
               <div className="flex items-center gap-1.5 font-bold">
                 <AlertTriangle className="w-4 h-4 shrink-0 text-[#B3382C]" />
                 <span>12 dòng bị trùng số điện thoại trong hệ thống</span>

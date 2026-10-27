@@ -721,13 +721,16 @@ export const StudentDetail: React.FC = () => {
       ========================================================================= */}
       {activeTab === "hoc_phi" && (
         <div className="space-y-4">
-          {/* Cảnh báo nếu thu dư (Ví dụ minh họa khi có thu vượt) */}
-          {false && (
+          {/* Cảnh báo nếu thu dư (khi có thu vượt học phí thực tế) */}
+          {enrollments.some((e) => e.balanceDue < 0) && (
             <div className="p-3.5 bg-[#FBF0DC] border border-[#A86A0B]/40 rounded-[8px] flex items-center justify-between gap-3 text-xs text-[#A86A0B]">
               <div className="flex items-center gap-2">
                 <AlertTriangle className="w-4 h-4 shrink-0" />
                 <span>
-                  <strong>Thu dư 100.000 ₫:</strong> Cần hoàn lại cho học viên.
+                  <strong>
+                    Thu dư {formatCurrency(Math.abs(enrollments.find((e) => e.balanceDue < 0)?.balanceDue || 0))}:
+                  </strong>{" "}
+                  Cần hoàn lại cho học viên.
                 </span>
               </div>
               {isOwner && (
@@ -1001,7 +1004,7 @@ export const StudentDetail: React.FC = () => {
                   setShowVoidModal(false)
                   setModalReason("")
                 }}
-                className="flex-1 bg-[#B3382C] text-white hover:bg-[#8e2b21]"
+                className="flex-1 bg-[#B3382C] text-white hover:bg-[#B3382C]/90"
               >
                 Xác nhận hủy
               </Button>

@@ -346,7 +346,7 @@ export const AppLayout: React.FC = () => {
             <div className="pt-4 mt-4 border-t border-[#DFE4EC]">
               <button
                 onClick={handleSignOut}
-                className="w-full h-10 flex items-center justify-center gap-2 rounded-[6px] bg-[#FBE8E5] text-[#B3382C] text-sm font-medium hover:bg-[#f8d7d3] transition-colors"
+                className="w-full h-10 flex items-center justify-center gap-2 rounded-[6px] bg-[#FBE8E5] text-[#B3382C] text-sm font-medium hover:bg-[#B3382C]/15 transition-colors"
               >
                 <LogOut className="w-4 h-4" />
                 <span>Đăng xuất</span>

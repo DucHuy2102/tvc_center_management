@@ -622,7 +622,7 @@ export const Tuition: React.FC = () => {
             className={`px-3 py-1.5 rounded-[6px] text-xs font-medium cursor-pointer transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               currentTab === "qua_han"
                 ? "bg-[#B3382C] text-white"
-                : "bg-[#FBE8E5] text-[#B3382C] hover:bg-[#F8D7D3]"
+                : "bg-[#FBE8E5] text-[#B3382C] hover:bg-[#B3382C]/15"
             }`}
           >
             <span>Quá hạn</span>
@@ -666,7 +666,7 @@ export const Tuition: React.FC = () => {
               className={`px-3 py-1.5 rounded-[6px] text-xs font-medium cursor-pointer transition-colors whitespace-nowrap flex items-center gap-1.5 ${
                 currentTab === "can_hoan_tien"
                   ? "bg-[#1E40AF] text-white"
-                  : "bg-[#FBE8E5] text-[#B3382C] hover:bg-[#F8D7D3]"
+                  : "bg-[#FBE8E5] text-[#B3382C] hover:bg-[#B3382C]/15"
               }`}
             >
               <span>Cần hoàn tiền</span>
@@ -1231,7 +1231,7 @@ export const Tuition: React.FC = () => {
             </div>
 
             {/* Chi tiết học viên (Read-only) */}
-            <div className="bg-[#FBE8E5]/50 border border-[#F5C2BC] rounded-[6px] p-3 text-xs space-y-1.5">
+            <div className="bg-[#FBE8E5]/50 border border-[#B3382C]/30 rounded-[6px] p-3 text-xs space-y-1.5">
               <div className="flex justify-between">
                 <span className="text-[#5A6478]">Học viên:</span>
                 <span className="font-semibold text-[#131B2E]">
@@ -1244,7 +1244,7 @@ export const Tuition: React.FC = () => {
                   {refundTarget.classCode}
                 </span>
               </div>
-              <div className="flex justify-between border-t border-[#F5C2BC] pt-1">
+              <div className="flex justify-between border-t border-[#B3382C]/30 pt-1">
                 <span className="text-[#5A6478]">Đã thu / Học phí:</span>
                 <span className="tabular-nums">
                   {formatCurrency(refundTarget.paidAmount)} /{" "}
@@ -1374,7 +1374,7 @@ export const Tuition: React.FC = () => {
                 <Button
                   type="submit"
                   disabled={Boolean(refundError) || refundAmount <= 0}
-                  className="h-9 text-xs font-medium bg-[#B3382C] text-white hover:bg-[#992E24]"
+                  className="h-9 text-xs font-medium bg-[#B3382C] text-white hover:bg-[#B3382C]/90"
                 >
                   Ghi nhận hoàn tiền
                 </Button>
@@ -1536,7 +1536,7 @@ export const Tuition: React.FC = () => {
                 <Button
                   type="submit"
                   variant="destructive"
-                  className="h-8 text-xs font-medium bg-[#B3382C] text-white hover:bg-[#992E24]"
+                  className="h-8 text-xs font-medium bg-[#B3382C] text-white hover:bg-[#B3382C]/90"
                 >
                   Xác nhận hủy phiếu
                 </Button>
