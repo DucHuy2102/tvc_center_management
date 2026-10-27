@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "@fontsource/be-vietnam-pro/300.css";
+@import "@fontsource/be-vietnam-pro/400.css";
+@import "@fontsource/be-vietnam-pro/500.css";
+@import "@fontsource/be-vietnam-pro/600.css";
+@import "@fontsource/be-vietnam-pro/700.css";
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  
+  --color-background: #F4F6FA;
+  --color-foreground: #131B2E;
+  
+  --color-card: #FFFFFF;
+  --color-card-foreground: #131B2E;
+  
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #131B2E;
+  
+  --color-primary: #1E40AF;
+  --color-primary-hover: #1E3A8A;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #ECEFF5;
+  --color-secondary-foreground: #5A6478;
+  
+  --color-muted: #ECEFF5;
+  --color-muted-foreground: #5A6478;
+  
+  --color-accent: #E7EDFB;
+  --color-accent-foreground: #1E40AF;
+  
+  --color-destructive: #B3382C;
+  --color-destructive-foreground: #FFFFFF;
+  
+  --color-border: #DFE4EC;
+  --color-input: #DFE4EC;
+  --color-ring: #3B82F6;
+
+  /* Semantic status tokens */
+  --color-status-success-bg: #E6F3EA;
+  --color-status-success-text: #2F7D4F;
+  --color-status-warning-bg: #FBF0DC;
+  --color-status-warning-text: #A86A0B;
+  --color-status-danger-bg: #FBE8E5;
+  --color-status-danger-text: #B3382C;
+  --color-status-neutral-bg: #ECEFF5;
+  --color-status-neutral-text: #5A6478;
+  --color-status-brass: #9A7B3F;
+  --color-status-brass-bg: #F8F4EB;
+
+  --radius-sm: 6px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+}
+
+:root {
+  --background: #F4F6FA;
+  --foreground: #131B2E;
+  --card: #FFFFFF;
+  --card-foreground: #131B2E;
+  --popover: #FFFFFF;
+  --popover-foreground: #131B2E;
+  --primary: #1E40AF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #ECEFF5;
+  --secondary-foreground: #5A6478;
+  --muted: #ECEFF5;
+  --muted-foreground: #5A6478;
+  --accent: #E7EDFB;
+  --accent-foreground: #1E40AF;
+  --destructive: #B3382C;
+  --destructive-foreground: #FFFFFF;
+  --border: #DFE4EC;
+  --input: #DFE4EC;
+  --ring: #3B82F6;
+  --radius: 6px;
+}
+
+* {
+  border-color: #DFE4EC;
+}
+
+body {
+  background-color: #F4F6FA;
+  color: #131B2E;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular figures for numbers, dates, currency */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
