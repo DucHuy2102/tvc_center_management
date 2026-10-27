@@ -19,16 +19,21 @@ Hệ thống quản lý học viên, học phí, lịch học, lớp học và k
 ## 2. Cài đặt và Chạy thử
 
 ### Bước 1: Cài đặt thư viện dependencies
+
 ```bash
 npm install
 ```
 
 ### Bước 2: Cấu hình biến môi trường
+
 Sao chép file `.env.example` thành `.env`:
+
 ```bash
 cp .env.example .env
 ```
+
 Điền URL và Anon Key lấy từ Supabase Dashboard (Settings -> API):
+
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
@@ -37,12 +42,15 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 > **LƯU Ý BẢO MẬT:** Tuyệt đối **CHỈ DÙNG ANON / PUBLISHABLE KEY** trong ứng dụng trình duyệt. Tuyệt đối không dùng `service_role` key.
 
 ### Bước 3: Khởi chạy môi trường phát triển (Dev)
+
 ```bash
 npm run dev
 ```
+
 Ứng dụng sẽ chạy tại địa chỉ mặc định: [http://localhost:5173](http://localhost:5173).
 
 ### Bước 4: Kiểm tra build sản phẩm
+
 ```bash
 npm run build
 ```
@@ -90,24 +98,25 @@ admin_tvc_center/
 
 ## 4. Bảng màu giao diện chuẩn
 
-| Vai trò | Mã màu |
-|---|---|
-| Nền ứng dụng (background) | `#F4F6FA` |
-| Bề mặt (card, popover, input) | `#FFFFFF` |
-| Chữ chính (foreground) | `#131B2E` |
-| Chữ phụ (muted-foreground) | `#5A6478` |
-| Viền (border) | `#DFE4EC` |
-| Xanh chính (primary) | `#1E40AF` |
-| Xanh chính khi rê chuột | `#1E3A8A` |
-| Nền xanh nhạt (accent, hàng đang chọn) | `#E7EDFB` |
-| Viền focus (ring) | `#3B82F6` |
-| Trạng thái Thành công | Chữ `#2F7D4F` trên nền `#E6F3EA` |
-| Trạng thái Cảnh báo | Chữ `#A86A0B` trên nền `#FBF0DC` |
-| Trạng thái Nguy hiểm | Chữ `#B3382C` trên nền `#FBE8E5` |
-| Trạng thái Trung tính | Chữ `#5A6478` trên nền `#ECEFF5` |
-| Màu đồng (chỉ dùng cho số tiền hoa hồng) | `#9A7B3F` |
+| Vai trò                                  | Mã màu                           |
+| ---------------------------------------- | -------------------------------- |
+| Nền ứng dụng (background)                | `#F4F6FA`                        |
+| Bề mặt (card, popover, input)            | `#FFFFFF`                        |
+| Chữ chính (foreground)                   | `#131B2E`                        |
+| Chữ phụ (muted-foreground)               | `#5A6478`                        |
+| Viền (border)                            | `#DFE4EC`                        |
+| Xanh chính (primary)                     | `#1E40AF`                        |
+| Xanh chính khi rê chuột                  | `#1E3A8A`                        |
+| Nền xanh nhạt (accent, hàng đang chọn)   | `#E7EDFB`                        |
+| Viền focus (ring)                        | `#3B82F6`                        |
+| Trạng thái Thành công                    | Chữ `#2F7D4F` trên nền `#E6F3EA` |
+| Trạng thái Cảnh báo                      | Chữ `#A86A0B` trên nền `#FBF0DC` |
+| Trạng thái Nguy hiểm                     | Chữ `#B3382C` trên nền `#FBE8E5` |
+| Trạng thái Trung tính                    | Chữ `#5A6478` trên nền `#ECEFF5` |
+| Màu đồng (chỉ dùng cho số tiền hoa hồng) | `#9A7B3F`                        |
 
 **Quy tắc bo góc:**
+
 - Ô nhập và nút bấm: `6px` (`rounded-[6px]`).
 - Khối nội dung / thẻ Card: `10px` (`rounded-[10px]`), sử dụng viền 1px `border-[#DFE4EC]` thay cho bóng đổ.
 - Bottom sheet / menu mobile: `16px` (`rounded-t-[16px]`).
